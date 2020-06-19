@@ -39,6 +39,11 @@ export default {
   text-align: center;
 }
 
+@media (max-width: 360px){
+  .button--wallet{
+    width: 90%;
+  }
+}
 
 
 #wallet {
@@ -54,7 +59,7 @@ export default {
   font-weight: 600;
   font-size: 3rem;
   color: #35495e;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
 }
 
 .subtitle {
