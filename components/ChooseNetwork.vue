@@ -1,19 +1,27 @@
 <template>
   <div class="row">
     <div class="struc ">
+      <nuxt-link to="/details" class="networks">
        <img class="shadow card-img" src="/networks/MTN Logo.svg" alt=" MTN Logo">
+      </nuxt-link>
     </div>
 
     <div class=" struc">
+      <nuxt-link to="/details" class="networks">
         <img class="shadow card-img" src="/networks/Airtel Nigeria Logo.svg" alt=" MTN Logo">
+      </nuxt-link>
       </div>
 
     <div class="struc">
-         <img class="card-img shadow" src="/networks/Globacom Limited Logo.svg" alt=" MTN Logo">
+        <nuxt-link to="/details" class="networks"> 
+          <img class="card-img shadow" src="/networks/Globacom Limited Logo.svg" alt=" MTN Logo"> 
+        </nuxt-link>
      </div>
 
     <div class="struc">
-      <img class="card-img shadow" src="/networks/9mobile Logo.svg" alt=" MTN Logo">
+      <nuxt-link to="/details" class="networks">
+        <img class="card-img shadow" src="/networks/9mobile Logo.svg" alt=" MTN Logo">
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -26,6 +34,11 @@
   }
   .card-img{
     padding: 1rem 1rem !important;
+    opacity: .7;
+  }
+
+  .card-img:hover{
+    opacity: 1;
   }
 
   .struc{
