@@ -3,7 +3,7 @@
     <form action="" class="mt-5 horix" v-on:submit.prevent>
       <div class="mb-4">
         <label for="Mobile Network">Mobile Number<sup class="text-danger">*</sup> </label>
-        <input class="form-control" v-model="data.PhoneNumber" placeholder="08171942286" type="number" min="11" required/> 
+        <input class="form-control" v-model="data.PhoneNumber" placeholder="08171942286" type="tel" min="11" required/> 
       </div>
 
       <div class="mb-4"> 
@@ -39,9 +39,11 @@
 
       <div style="height: 10rem"> </div>
       <footer class="d-flex justify-content-center">
-        <button @click="handleWallet" class="button--wallet"> 1-Touch with E-wallet 
+        <button @click="handleWallet" :loading="isLoading"  class="button--wallet"> 
+                   1-Touch with E-wallet 
         <arrow-right-icon size="1x" class="custom-class"></arrow-right-icon>
         </button>
+        
       </footer>
     </form>
   </div>
@@ -63,14 +65,18 @@ export default {
         
       }
     }
+  
   },
  
   methods : {
+    
+    
     handleWallet() {
+     
       const requestObject = {
-        network: this.data.Code,
-        amount: this.data.Amount,
-        phone: this.data.PhoneNumber,
+        Code: this.data.Code,
+        Amount: this.data.Amount,
+        PhoneNumber: this.data.PhoneNumber,
         SecretKey: "hfucj5jatq8h"
       }
 
@@ -78,12 +84,22 @@ export default {
          'Content-Type': 'application/json',
           'Authorization': "Bearer uvjqzm5xl6bw"
       }
+
+      var url = "https://sandbox.wallets.africa/bills/airtime/purchase"
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+      
       this.$axios
-        .post('https://cors-anywhere.herokuapp.com/', 'https://sandbox.wallets.africa/bills/airtime/purchase', requestObject, {headers})
-        .then(response => {
-          console.log(response.data)
-        })
-        .catch(err => console.error(err))
+        .post(proxyUrl + url, requestObject, {headers})
+           .then(response => {
+             console.log(response.data)
+             console.log(response.data.Message)
+         
+             swal({title: 'Transaction Completed!', text: 'N' + response.data.ResponseCode + ' naira ' + response.data.Message,  icon: 'success'})
+            })
+           .catch(err => {
+             console.error(err)
+              swal({title: err.response, text: err.response.message,  icon: 'error'})
+            })
     },
 
     
@@ -91,6 +107,7 @@ export default {
   
 }
 </script>
+
 
 <style scoped>
   .button--wallet{

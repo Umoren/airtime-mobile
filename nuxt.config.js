@@ -19,7 +19,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { href:"https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Roboto&display=swap", rel: "stylesheet" }
-    ]
+    ],
   },
   /*
   ** Global CSS
@@ -34,7 +34,11 @@ export default {
      {
       src: '~plugins/element-ui',
       ssr: false
-    }
+    },
+     {
+      src: '~/plugins/sweetalert',
+      ssr: false
+    },
   ],
   /*
   ** Nuxt.js dev-modules
