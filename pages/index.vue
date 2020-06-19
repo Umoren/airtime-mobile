@@ -15,7 +15,7 @@
           Buy Airtime
         </a> -->
 
-        <nuxt-link to="/providers" class="button--wallet"> Buy Airtime</nuxt-link>
+        <nuxt-link to="/providers" class="button--wallet"> Buy Airtimeeeee</nuxt-link>
       </div>
     </div>
   </div>
