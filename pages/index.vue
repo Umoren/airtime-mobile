@@ -39,17 +39,7 @@ export default {
   text-align: center;
 }
 
-.button--wallet{
-    display: inline-block;
-    border-radius: 4px;
-    border: 1px solid rgba(95,75,139,1);
-    color: #ffffff;
-    background:rgba(95,75,139,1);
-    text-decoration: none;
-    padding: 10px 75px;
-    font-size: 1.5rem;
-    
-}
+
 
 #wallet {
     width: 20rem;
@@ -62,7 +52,7 @@ export default {
     sans-serif;
   display: block;
   font-weight: 600;
-  font-size: 5rem;
+  font-size: 3rem;
   color: #35495e;
   letter-spacing: 1px;
 }
