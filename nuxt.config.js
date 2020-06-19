@@ -31,6 +31,10 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+     {
+      src: '~plugins/element-ui',
+      ssr: false
+    }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -45,6 +49,7 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'nuxt-element-ui',
   
   ],
   /*
